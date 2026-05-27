@@ -95,14 +95,12 @@ def load_process_save_dataset(path_folder):
  
     for i, file_path in enumerate(file_list, start=1):
         try:
-            # 1. Baca gambar manual
+ 
             img = read_pgm(file_path)
   
-            # 2. Filter manual
             img_equ = manual_equalize_hist(img)
             img_blur = manual_gaussian_blur(img_equ)
             
-            # Sesuai kode awal, laplacian diambil dari img_equ
             img_laplacian = manual_laplacian(img_equ)
             img_gamma_bright = manual_gamma_correction(img, gamma=0.45)
  
@@ -115,8 +113,7 @@ def load_process_save_dataset(path_folder):
                 '_laplacian.pgm'    : img_laplacian,
                 '_gamma_bright.pgm' : img_gamma_bright,
             }
- 
-            # 3. Simpan manual (tanpa cv2.imwrite)
+
             for suffix, result_img in paths.items():
                 out_path = os.path.join(path_output, filename_without_ext + suffix)
                 write_pgm(out_path, result_img)

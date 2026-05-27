@@ -86,10 +86,9 @@ def load_and_process_dataset(path_folder):
 
     for i, file_path in enumerate(samples):
         try:
-            # 1. Baca gambar manual (tanpa cv2.imread)
+
             img = read_pgm(file_path)
 
-            # 2. Filter manual
             img_equ = manual_equalize_hist(img)
             img_blur = manual_gaussian_blur(img_equ)
             img_laplacian = manual_laplacian(img_blur)
@@ -100,7 +99,7 @@ def load_and_process_dataset(path_folder):
 
             for j in range(num_cols + 1):
                 plt.subplot(num_samples, num_cols + 1, i * (num_cols + 1) + j + 1)
-                # Tambahkan vmin dan vmax agar matplotlib membaca grayscale dengan benar
+
                 plt.imshow(display_list[j], cmap='gray', vmin=0, vmax=255)
                 if i == 0:
                     plt.title(titles[j], fontsize=7)
