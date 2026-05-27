@@ -19,7 +19,7 @@ def write_pgm(file_path, image):
 class WebcamApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Webcam Capture Manual")
+        self.root.title("Webcam Capture")
         self.root.geometry("650x750")
 
         self.save_dir = os.path.join(os.path.dirname(__file__), 'webcam')
