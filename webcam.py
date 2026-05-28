@@ -1,20 +1,8 @@
 import tkinter as tk
-import numpy as np
 import cv2
 import os
 from PIL import Image, ImageTk
-
-def rgb_to_gray_manual(frame):
-    gray = np.dot(frame[..., :3], [0.299, 0.587, 0.114])
-    return gray.astype(np.uint8)
-
-def write_pgm(file_path, image):
-    height, width = image.shape
-    with open(file_path, 'wb') as f:
-        f.write(b'P5\n')
-        f.write(f"{width} {height}\n".encode('ascii'))
-        f.write(b'255\n')
-        f.write(image.astype(np.uint8).tobytes())
+from src.image_utils import rgb_to_gray_manual, write_pgm
 
 class WebcamApp:
     def __init__(self, root):
