@@ -28,7 +28,7 @@ def equalize_hist(img):
     hist, _ = np.histogram(img.flatten(), bins=256, range=[0, 256])
     cdf = hist.cumsum()
     cdf_masked = np.ma.masked_equal(cdf, 0)
-    cdf_masked = (cdf_masked - cdf_masked.min()) * 255 / (cdf_masked.max() - cdf_masked.min())
+    cdf_masked = np.round((cdf_masked - cdf_masked.min()) * 255.0 / (cdf_masked.max() - cdf_masked.min()))
     cdf = np.ma.filled(cdf_masked, 0).astype(np.uint8)
     return cdf[img]
 
