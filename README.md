@@ -2,7 +2,11 @@
 
 
 Oleh: 
+- M Takhlis Griska Rafi (24051204070)
 - Muhammad Fariq Faqih (24051204084)
+- Pniel Alfrado Salakay (24051204092)
+- Ghalib Zhafran Daffa' Favian (24051204095)
+- Pratama Rizalekta Yudayana (240512040997)
 
 ---
 Sebuah proyek eksperimental Face Detection dan Face Recognition yang dibangun **secara murni (from-scratch)** menggunakan teknik pengolahan citra digital (Digital Image Processing / DIP). 
